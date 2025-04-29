@@ -5,7 +5,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.impute import SimpleImputer
 from sklearn.decomposition import PCA
 from sklearn.feature_selection import SelectFromModel
-from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
@@ -13,10 +13,10 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.pipeline import Pipeline
 
 # Step 1: Load the dataset
-iris_data = pd.read_csv('iris.csv')
+iris_data = pd.read_csv('/content/drive/MyDrive/iris.csv')
 
 # Step 2: Parse the model parameters from JSON embedded in RTF
-with open('algoparams_from_ui.json.rtf', 'r') as rtf_file:
+with open('/content/algoparams_from_ui.json.rtf', 'r') as rtf_file:
     rtf_content = rtf_file.read()
     json_start = rtf_content.find('{')
     json_end = rtf_content.rfind('}') + 1
